@@ -1,0 +1,20 @@
+PODS:
+  - DNRefreshKit (1):
+    - FLAnimatedImage
+  - FLAnimatedImage (1.0.12)
+
+DEPENDENCIES:
+  - DNRefreshKit (from `../`)
+  - FLAnimatedImage
+
+EXTERNAL SOURCES:
+  DNRefreshKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DNRefreshKit: a8423e757e4040335d8da82f1ebeaee2ff1e6692
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+
+PODFILE CHECKSUM: a9ff275ce6ff0926ceb1f41a40f680e723f5fe1b
+
+COCOAPODS: 1.4.0
