@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DNRefreshKit_Example' do
+  pod 'DNRefreshKit', :path => '../'
+
+  target 'DNRefreshKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
