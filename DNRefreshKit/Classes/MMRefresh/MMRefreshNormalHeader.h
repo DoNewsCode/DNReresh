@@ -8,7 +8,13 @@
 
 #import "MMRefreshStateHeader.h"
 #import "FLAnimatedImageView.h"
+
+#if __has_include( <FLAnimatedImage/FLAnimatedImage.h>)
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#else
 #import "FLAnimatedImage.h"
+#endif
+
 @interface MMRefreshNormalHeader : MMRefreshStateHeader
 
 //@property (weak, nonatomic, readonly) UIImageView *arrowView;

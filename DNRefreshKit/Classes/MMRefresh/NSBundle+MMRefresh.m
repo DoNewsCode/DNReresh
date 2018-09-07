@@ -8,7 +8,7 @@
 
 #import "NSBundle+MMRefresh.h"
 #import "MMRefreshComponent.h"
-#import "FLAnimatedImage.h"
+
 @implementation NSBundle (MMRefresh)
 + (instancetype)mm_refreshBundle
 {
