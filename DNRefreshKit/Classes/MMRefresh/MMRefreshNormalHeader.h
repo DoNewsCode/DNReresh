@@ -7,7 +7,6 @@
 //
 
 #import "MMRefreshStateHeader.h"
-
 #if __has_include( <FLAnimatedImage/FLAnimatedImage.h>)
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #else
