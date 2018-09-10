@@ -10,13 +10,13 @@
 #import "NSBundle+MMRefresh.h"
 #import "UIView+JAExt.h"
 #import "MMRefreshConst.h"
+
 @interface MMRefreshNormalHeader ()
-//{
-//     FLAnimatedImageView *_arrowView;
-//}
+
 @property (weak, nonatomic) UIActivityIndicatorView *loadingView;
 
 @end
+
 @implementation MMRefreshNormalHeader
 
 #pragma mark - Override
@@ -47,8 +47,6 @@
     if (self.loadingView.constraints.count == 0) {
         self.loadingView.center = arrowCenter;
     }
-    
-//    self.arrowView.tintColor = self.stateLabel.textColor;
 }
 
 - (void)setState:(MMRefreshState)state
@@ -112,7 +110,6 @@
         [self addSubview:arrowView];
         _arrowView = arrowView;
         [self sendSubviewToBack:_arrowView];
-//        CGFloat w = image.size.width * 0.5;
         self.arrowView.size = CGSizeMake(image.size.width * 0.5, image.size.height * 0.54);
     }
     

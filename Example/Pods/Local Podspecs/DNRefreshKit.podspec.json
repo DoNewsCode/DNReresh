@@ -19,6 +19,11 @@
     "ios": "8.0"
   },
   "source_files": "DNRefreshKit/Classes/**/*",
+  "resource_bundles": {
+    "DNRefreshKit": [
+      "DNRefreshKit/Assets/*.*"
+    ]
+  },
   "dependencies": {
     "FLAnimatedImage": [
 

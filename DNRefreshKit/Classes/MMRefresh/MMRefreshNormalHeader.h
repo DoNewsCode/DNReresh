@@ -15,8 +15,8 @@
 
 @interface MMRefreshNormalHeader : MMRefreshStateHeader
 
-//@property (weak, nonatomic, readonly) UIImageView *arrowView;
-@property (weak, nonatomic) FLAnimatedImageView *arrowView;//下拉加载的GIF动画
-/** 菊花的样式 */
+/// 下拉加载的GIF动画
+@property (weak, nonatomic) FLAnimatedImageView *arrowView;
+/// 菊花的样式
 @property (assign, nonatomic) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 @end

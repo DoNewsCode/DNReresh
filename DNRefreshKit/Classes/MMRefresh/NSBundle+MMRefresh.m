@@ -15,7 +15,7 @@
     static NSBundle *refreshBundle = nil;
     if (refreshBundle == nil) {
         // 这里不使用mainBundle是为了适配pod 1.x和0.x
-        refreshBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[MMRefreshComponent class]] pathForResource:@"MMRefresh" ofType:@"bundle"]];
+        refreshBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[MMRefreshComponent class]] pathForResource:@"DNRefreshKit" ofType:@"bundle"]];
     }
     return refreshBundle;
 }
@@ -24,7 +24,7 @@
 {
     static UIImage *arrowImage = nil;
     if (arrowImage == nil) {
-        arrowImage = [[UIImage imageWithContentsOfFile:[[self mm_refreshBundle] pathForResource:@"arrow@2x" ofType:@"png"]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        arrowImage = [[UIImage imageWithContentsOfFile:[[self mm_refreshBundle] pathForResource:@"arrow" ofType:@"png"]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
     return arrowImage;
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DNRefreshKit'
-  s.version          = '1'
+  s.version          = '2'
   s.summary          = 'A short description of DNRefreshKit.'
 
 # This description is used to generate tags and improve search results.
@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'DNRefreshKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'DNRefreshKit' => ['DNRefreshKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'DNRefreshKit' => ['DNRefreshKit/Assets/*.*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

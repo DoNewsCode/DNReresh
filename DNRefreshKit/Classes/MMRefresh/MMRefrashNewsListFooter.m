@@ -21,8 +21,6 @@
 {
     [super prepare];
     // 设置控件的高度
-//    self.height = se;
-    
     // 添加label
     UILabel *label = [[UILabel alloc] init];
     label.textColor = self.style.refreshTextColor;
