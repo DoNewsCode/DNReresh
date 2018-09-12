@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7809DF6A2B4D6C6736A49E86 /* Pods_DNRefreshKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE45868CB9CC98FCBAE8E7D /* Pods_DNRefreshKit_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		B189FB272148A68B00A9D88B /* MMRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B189FB262148A68B00A9D88B /* MMRefresh.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		66EC432C8927DAF060EEC811 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B189FB262148A68B00A9D88B /* MMRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MMRefresh.bundle; sourceTree = "<group>"; };
 		C3983FD8DCF98581628CDD31 /* Pods-DNRefreshKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNRefreshKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E31E4E2F60FA191913BD49F9 /* Pods-DNRefreshKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNRefreshKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 		6003F593195388D20070C39A /* Example for DNRefreshKit */ = {
 			isa = PBXGroup;
 			children = (
+				B189FB262148A68B00A9D88B /* MMRefresh.bundle */,
 				6003F59C195388D20070C39A /* DNAppDelegate.h */,
 				6003F59D195388D20070C39A /* DNAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -283,6 +286,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				B189FB272148A68B00A9D88B /* MMRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

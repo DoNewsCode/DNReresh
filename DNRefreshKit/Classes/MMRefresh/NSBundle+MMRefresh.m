@@ -19,6 +19,7 @@
     }
     return refreshBundle;
 }
+
 //原先的 现在仅用于上拉加载
 + (UIImage *)mm_arrowImage
 {
@@ -28,6 +29,7 @@
     }
     return arrowImage;
 }
+
 + (FLAnimatedImage *)mm_arrowHeaderImageRefresh
 {
     FLAnimatedImage *arrowImage = nil;

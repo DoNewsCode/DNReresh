@@ -28,6 +28,7 @@ static char __headerKey,__footerKey;
             executingBlock();
         }
     }];
+    header.animationImage = [self __arrowHeaderImage];
     header.automaticallyChangeAlpha = YES;
     header.lastUpdatedTimeLabel.hidden = YES;// 隐藏时间
     header.stateLabel.hidden = YES;
@@ -78,6 +79,19 @@ static char __headerKey,__footerKey;
 
 - (MMRefrashNewsListFooter *)footer {
     return objc_getAssociatedObject(self, &__footerKey);
+}
+
+//添加的 下拉刷新动图
+- (FLAnimatedImage *)__arrowHeaderImage{
+    FLAnimatedImage *arrowImage = nil;
+    if (arrowImage == nil) {
+        NSString *imgBundlePath = [[NSBundle mainBundle] pathForResource:@"MMRefresh" ofType:@"bundle"];
+        NSBundle *imgBundle = [NSBundle bundleWithPath:imgBundlePath];
+        NSString *imgPath = [imgBundle pathForResource:@"loading" ofType:@"gif"];
+        NSData *imgdata = [NSData dataWithContentsOfFile:imgPath];
+        arrowImage = [FLAnimatedImage animatedImageWithGIFData:imgdata];
+    }
+    return arrowImage;
 }
 
 

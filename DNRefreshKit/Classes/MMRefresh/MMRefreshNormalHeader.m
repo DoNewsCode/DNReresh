@@ -14,6 +14,7 @@
 @interface MMRefreshNormalHeader ()
 
 @property (weak, nonatomic) UIActivityIndicatorView *loadingView;
+@property (nonatomic, strong) FLAnimatedImage *animtionImage;
 
 @end
 
@@ -100,19 +101,26 @@
     self.loadingView = nil;
     [self setNeedsLayout];
 }
+
+- (void)setAnimationImage:(FLAnimatedImage *)animationImage {
+    _animtionImage = animationImage;
+    if (animationImage) {
+        [self.arrowView setAnimatedImage:animationImage];
+        self.arrowView.size = CGSizeMake(animationImage.size.width * 0.5, animationImage.size.height * 0.54);
+    }
+}
+
 ///>下拉刷新图片改为 GIF 动图
 -(FLAnimatedImageView *)arrowView{
 
     if (!_arrowView) {
         FLAnimatedImage *image = [NSBundle mm_arrowHeaderImage];
-        FLAnimatedImageView *arrowView = [FLAnimatedImageView new];
-        [arrowView setAnimatedImage:image];
-        [self addSubview:arrowView];
-        _arrowView = arrowView;
+        _arrowView = [FLAnimatedImageView new];
+        [_arrowView setAnimatedImage:image];
+        [self addSubview:_arrowView];
         [self sendSubviewToBack:_arrowView];
-        self.arrowView.size = CGSizeMake(image.size.width * 0.5, image.size.height * 0.54);
+        _arrowView.size = CGSizeMake(image.size.width * 0.5, image.size.height * 0.54);
     }
-    
     return _arrowView;
 }
 - (UIActivityIndicatorView *)loadingView

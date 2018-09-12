@@ -7,8 +7,8 @@
 //
 
 #import "DNViewController.h"
+#import "UIScrollView+Refresh.h"
 #import <DNRefreshKit/UIScrollView+Refresh.h>
-#import <DNRefreshKit/NSBundle+MMRefresh.h>
 
 @interface DNViewController () <UITableViewDelegate, UITableViewDataSource>
     
@@ -22,9 +22,8 @@
 {
     [super viewDidLoad];
     [self.view addSubview:self.tabelView];
-    
+
      [self.tabelView tg_headerRefreshExecutingBlock:^{
-         NSLog(@"下拉刷新数据");
          dispatch_async(dispatch_get_global_queue(0, 0), ^{
              [NSThread sleepForTimeInterval:1];
              dispatch_async(dispatch_get_main_queue(), ^{
