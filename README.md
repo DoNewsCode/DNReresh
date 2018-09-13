@@ -58,6 +58,27 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
   ![](./images/img1.png)
   
+  ### GIF的帧动画刷新
+  
+  * 在项目创建名为 `MMRefreshGif.bundle`资源文件夹
+  * 将帧动画的一组图片拖入资源文件夹，必须以png后缀结尾
+  
+  * 设置 gifType 为 MMRereshGifTypeFrameAnimation
+  * isChangeAlpha 表示执行gif下拉刷新时是否同时改变Alpha
+  
+  ```  
+  [self.tabelView tg_headerRefreshExecutingBlock:^{
+         dispatch_async(dispatch_get_global_queue(0, 0), ^{
+             [NSThread sleepForTimeInterval:1];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                  [self.tabelView tg_headerEndRefresh];
+             });
+         });
+     } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
+     
+ ```   
+ 
+  ![](./images/img2.gif)
 ## Installation
 
 DNRefreshKit is available through [CocoaPods](https://cocoapods.org). To install

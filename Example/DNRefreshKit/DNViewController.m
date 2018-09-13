@@ -29,7 +29,7 @@
                   [self.tabelView tg_headerEndRefresh];
              });
          });
-     } gifType:MMRereshGifTypeDefault isChangeAlpha:NO];
+     } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
     
     
 //    //下拉刷新
