@@ -8,12 +8,13 @@
 
 #import "UIScrollView+Refresh.h"
 #import <objc/runtime.h>
+#import "MMRefreshGifFrameAnimationHeader.h"
 
 static char __headerKey,__footerKey;
 
 @interface UIScrollView ()
 
-@property (nonatomic, strong) MMRefreshNormalHeader *header;
+@property (nonatomic, strong) MMRefreshStateHeader *header;
 @property (nonatomic, strong) MMRefrashNewsListFooter *footer;
 
 @end
@@ -21,19 +22,40 @@ static char __headerKey,__footerKey;
 @implementation UIScrollView (Refresh)
 
 - (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock {
-    
-    MMRefreshStyle *headerStyle = [MMRefreshStyle new];
-    MMRefreshNormalHeader *header = [MMRefreshNormalHeader refreshHeaderWithStyle:headerStyle loadingBlock:^{
-        if (executingBlock) {
-            executingBlock();
-        }
-    }];
-    header.animationImage = [self __arrowHeaderImage];
-    header.automaticallyChangeAlpha = YES;
-    header.lastUpdatedTimeLabel.hidden = YES;// 隐藏时间
-    header.stateLabel.hidden = YES;
-    self.mm_header =  header;
-    self.header = header;
+    [self tg_headerRefreshExecutingBlock:executingBlock gifType:MMRereshGifTypeDefault isChangeAlpha:NO];
+}
+
+- (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock gifType:(MMRereshGifType)gifType isChangeAlpha:(BOOL)isChangeAlpha {
+    if (gifType == MMRereshGifTypeFrameAnimation) {
+        
+        //下拉刷新
+        MMRefreshStyle *headerStyle = [MMRefreshStyle new];
+        MMRefreshGifFrameAnimationHeader *header = [MMRefreshGifFrameAnimationHeader refreshHeaderWithStyle:headerStyle loadingBlock:^{
+            if (executingBlock) {
+                executingBlock();
+            }
+        }];
+        header.automaticallyChangeAlpha = isChangeAlpha;
+        header.lastUpdatedTimeLabel.hidden = YES;//如果不隐藏,会默认图片在最左边不是在中间
+        header.stateLabel.hidden = YES; //隐藏状态
+        self.mm_header = header;
+        self.header = header;
+        
+    } else {
+        
+        MMRefreshStyle *headerStyle = [MMRefreshStyle new];
+        MMRefreshNormalHeader *header = [MMRefreshNormalHeader refreshHeaderWithStyle:headerStyle loadingBlock:^{
+            if (executingBlock) {
+                executingBlock();
+            }
+        }];
+        header.animationImage = [self __arrowHeaderImage];
+        header.automaticallyChangeAlpha = YES;
+        header.lastUpdatedTimeLabel.hidden = YES;// 隐藏时间
+        header.stateLabel.hidden = YES;
+        self.mm_header =  header;
+        self.header = header;
+    }
 }
 
 - (void)tg_footerRefreshExecutingBlock:(void(^)(void))executingBlock {

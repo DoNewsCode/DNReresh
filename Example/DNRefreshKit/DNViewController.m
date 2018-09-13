@@ -7,7 +7,6 @@
 //
 
 #import "DNViewController.h"
-#import "UIScrollView+Refresh.h"
 #import <DNRefreshKit/UIScrollView+Refresh.h>
 
 @interface DNViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -30,7 +29,23 @@
                   [self.tabelView tg_headerEndRefresh];
              });
          });
-     }];
+     } gifType:MMRereshGifTypeDefault isChangeAlpha:NO];
+    
+    
+//    //下拉刷新
+//    DNRefreshGifHeader *header = [DNRefreshGifHeader refreshHeaderWithStyle:nil loadingBlock:^{
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            [NSThread sleepForTimeInterval:1];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.tabelView.mm_header endLoading];
+//            });
+//        });
+//    }];
+    
+//    DNRefreshGifHeader *header = [DNRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getData)];
+//    self.tabelView.mm_header = header;
+//    DNRefreshGifHeader *header =  [[DNRefreshGifHeader alloc] init];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -46,7 +61,8 @@
 #pragma mark - Getters & Setters
 - (UITableView *)tabelView {
     if(_tabelView == nil) {
-        _tabelView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        CGRect frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height);
+        _tabelView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
         _tabelView.dataSource = self;
         _tabelView.delegate = self;
         [_tabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];

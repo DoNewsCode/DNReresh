@@ -20,6 +20,8 @@
 #import "MMRefreshComponent.h"
 #import "MMRefreshConst.h"
 #import "MMRefreshFooter.h"
+#import "MMRefreshGifFrameAnimationHeader.h"
+#import "MMRefreshGifHeader.h"
 #import "MMRefreshHeader.h"
 #import "MMRefreshNormalBackFooter.h"
 #import "MMRefreshNormalHeader.h"
