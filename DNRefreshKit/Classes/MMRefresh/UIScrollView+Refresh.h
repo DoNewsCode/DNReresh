@@ -16,7 +16,9 @@ typedef NS_ENUM(NSUInteger,MMRereshGifType) {
 
 @interface UIScrollView (Refresh)
 
+/// 下拉刷新
 - (void)tg_headerRefreshExecutingBlock:(void(^)(void))executingBlock;
+/// 上拉刷新
 - (void)tg_footerRefreshExecutingBlock:(void(^)(void))executingBlock;
 /// isChangeAlpha 下拉时是否改变Alpha 默认为NO
 - (void)tg_headerRefreshExecutingBlock:(void(^)(void))executingBlock gifType:(MMRereshGifType)gifType isChangeAlpha:(BOOL)isChangeAlpha;
