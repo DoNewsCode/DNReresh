@@ -28,9 +28,9 @@
 #import "MMRefreshStateHeader.h"
 #import "MMRefreshStyle.h"
 #import "NSBundle+MMRefresh.h"
+#import "UIScrollView+DNRefresh.h"
 #import "UIScrollView+JAExt.h"
 #import "UIScrollView+MMRefresh.h"
-#import "UIScrollView+Refresh.h"
 #import "UIView+JAExt.h"
 
 FOUNDATION_EXPORT double DNRefreshKitVersionNumber;

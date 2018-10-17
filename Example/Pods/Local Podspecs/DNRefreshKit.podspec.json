@@ -1,6 +1,6 @@
 {
   "name": "DNRefreshKit",
-  "version": "5",
+  "version": "6",
   "summary": "A short description of DNRefreshKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/DoNewsCode/DNReresh",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/DoNewsCode/DNReresh.git",
-    "tag": "5"
+    "tag": "6"
   },
   "platforms": {
     "ios": "8.0"

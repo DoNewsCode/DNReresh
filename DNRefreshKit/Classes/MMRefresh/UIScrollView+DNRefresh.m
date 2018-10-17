@@ -1,12 +1,11 @@
 //
-//  UIScrollView+Refresh.m
-//  TGBus
+//  UIScrollView+DNRefresh.m
+//  DNRefreshKit
 //
-//  Created by donews on 2018/8/9.
-//  Copyright © 2018年 Jamie. All rights reserved.
+//  Created by donews on 2018/10/17.
 //
 
-#import "UIScrollView+Refresh.h"
+#import "UIScrollView+DNRefresh.h"
 #import <objc/runtime.h>
 #import "MMRefreshGifFrameAnimationHeader.h"
 
@@ -19,10 +18,22 @@ static char __headerKey,__footerKey;
 
 @end
 
-@implementation UIScrollView (Refresh)
+
+@implementation UIScrollView (DNRefresh)
 
 - (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock {
-    [self tg_headerRefreshExecutingBlock:executingBlock gifType:MMRereshGifTypeDefault isChangeAlpha:NO];
+     [self tg_headerRefreshExecutingBlock:executingBlock gifType:MMRereshGifTypeDefault isChangeAlpha:NO];
+}
+
+- (void)tg_footerRefreshExecutingBlock:(void (^)(void))executingBlock {
+    MMRefrashNewsListFooter *footer = [MMRefrashNewsListFooter refreshFooterWithStyle:nil loadingBlock:^{
+        if (executingBlock) {
+            executingBlock();
+        }
+    }];
+    self.mm_footer = footer;
+    self.mm_footer.hidden = YES;
+    self.footer = footer;
 }
 
 - (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock gifType:(MMRereshGifType)gifType isChangeAlpha:(BOOL)isChangeAlpha {
@@ -56,18 +67,6 @@ static char __headerKey,__footerKey;
         self.mm_header =  header;
         self.header = header;
     }
-}
-
-- (void)tg_footerRefreshExecutingBlock:(void(^)(void))executingBlock {
-    
-    MMRefrashNewsListFooter *footer = [MMRefrashNewsListFooter refreshFooterWithStyle:nil loadingBlock:^{
-        if (executingBlock) {
-            executingBlock();
-        }
-    }];
-    self.mm_footer = footer;
-    self.mm_footer.hidden = YES;
-    self.footer = footer;
 }
 
 - (void)tg_headerBeginRefresh {

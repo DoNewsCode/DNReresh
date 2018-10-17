@@ -1,9 +1,8 @@
 //
-//  UIScrollView+Refresh.h
-//  TGBus
+//  UIScrollView+DNRefresh.h
+//  DNRefreshKit
 //
-//  Created by donews on 2018/8/9.
-//  Copyright © 2018年 Jamie. All rights reserved.
+//  Created by donews on 2018/10/17.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +13,7 @@ typedef NS_ENUM(NSUInteger,MMRereshGifType) {
     MMRereshGifTypeFrameAnimation // 帧动画
 };
 
-@interface UIScrollView (Refresh)
+@interface UIScrollView (DNRefresh)
 
 /// 下拉刷新
 - (void)tg_headerRefreshExecutingBlock:(void(^)(void))executingBlock;
