@@ -36,6 +36,18 @@ static char __headerKey,__footerKey;
     self.footer = footer;
 }
 
+- (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock gifHeader:(MMRefreshGifHeader *)gifHeader isChangeAlpha:(BOOL)isChangeAlpha {
+    
+    gifHeader.loadingBlock = executingBlock;
+
+    gifHeader.automaticallyChangeAlpha = isChangeAlpha;
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;//如果不隐藏,会默认图片在最左边不是在中间
+    gifHeader.stateLabel.hidden = YES; //隐藏状态
+    self.mm_header = gifHeader;
+    self.header = gifHeader;
+    
+}
+
 - (void)tg_headerRefreshExecutingBlock:(void (^)(void))executingBlock gifType:(MMRereshGifType)gifType isChangeAlpha:(BOOL)isChangeAlpha {
     if (gifType == MMRereshGifTypeFrameAnimation) {
         

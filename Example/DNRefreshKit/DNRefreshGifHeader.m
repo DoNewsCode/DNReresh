@@ -18,7 +18,7 @@
     NSArray *array = [NSBundle pathsForResourcesOfType:@"png" inDirectory:imgBundlePath];
     // 设置普通状态的动画图片
     NSMutableArray *images = [NSMutableArray array];
-    for (NSUInteger i = 0; i< array.count; i++) {
+    for (NSUInteger i = 5; i< array.count; i++) {
         UIImage *image = [UIImage imageWithContentsOfFile:array[i]];
         [images addObject:image];
     }

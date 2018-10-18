@@ -8,6 +8,7 @@
 
 #import "DNViewController.h"
 #import <DNRefreshKit/UIScrollView+DNRefresh.h>
+#import "DNRefreshGifHeader.h"
 
 @interface DNViewController () <UITableViewDelegate, UITableViewDataSource>
     
@@ -22,16 +23,27 @@
     [super viewDidLoad];
     [self.view addSubview:self.tabelView];
     
+//    [self.tabelView tg_headerRefreshExecutingBlock:^{
+//
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            [NSThread sleepForTimeInterval:1];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.tabelView tg_headerEndRefresh];
+//            });
+//        });
+//
+//    } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
+    
+    MMRefreshStyle *style = [MMRefreshStyle new];
+    DNRefreshGifHeader *gitHeader = [[DNRefreshGifHeader alloc] initWithMMRefreshStyle:style];
     [self.tabelView tg_headerRefreshExecutingBlock:^{
-        
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             [NSThread sleepForTimeInterval:1];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tabelView tg_headerEndRefresh];
             });
         });
-        
-    } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
+    } gifHeader:gitHeader isChangeAlpha:NO];
 
     
 //    //下拉刷新
