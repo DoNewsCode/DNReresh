@@ -1,5 +1,5 @@
 PODS:
-  - DNRefreshKit (7.1):
+  - DNRefreshKit (7.2):
     - FLAnimatedImage
   - FLAnimatedImage (1.0.12)
 
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DNRefreshKit: 60b796faa71be96bf1e9cbea6074c94c29e717f1
+  DNRefreshKit: c2417447b35514e58e62c19781104ab9b1b27a9c
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
 
 PODFILE CHECKSUM: a9ff275ce6ff0926ceb1f41a40f680e723f5fe1b

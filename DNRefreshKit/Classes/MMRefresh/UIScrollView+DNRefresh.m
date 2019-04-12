@@ -44,8 +44,9 @@ static char __headerKey,__footerKey;
     gifHeader.automaticallyChangeAlpha = isChangeAlpha;
     gifHeader.lastUpdatedTimeLabel.hidden = YES;//如果不隐藏,会默认图片在最左边不是在中间
     gifHeader.stateLabel.hidden = NO; //隐藏状态
-//    [gifHeader setTitle:@"22222" forState:MMRefreshStatePressing];
-//    [gifHeader setTitle:@"111" forState:MMRefreshStateLoading];
+    [gifHeader setTitle:@"" forState:MMRefreshStateNormal];
+    [gifHeader setTitle:@"" forState:MMRefreshStateLoading];
+    [gifHeader setTitle:@"" forState:MMRefreshStatePressing];
     self.mm_header = gifHeader;
     self.header = gifHeader;
     
@@ -65,8 +66,9 @@ static char __headerKey,__footerKey;
         header.lastUpdatedTimeLabel.hidden = YES;//如果不隐藏,会默认图片在最左边不是在中间
 //        header.stateLabel.hidden = YES; //隐藏状态
         header.stateLabel.hidden = NO; //隐藏状态
-//        [header setTitle:@"22222" forState:MMRefreshStatePressing];
-//        [header setTitle:@"111" forState:MMRefreshStateLoading];
+        [header setTitle:@"" forState:MMRefreshStateNormal];
+        [header setTitle:@"" forState:MMRefreshStateLoading];
+        [header setTitle:@"" forState:MMRefreshStatePressing];
         self.mm_header = header;
         self.header = header;
         
@@ -82,9 +84,11 @@ static char __headerKey,__footerKey;
         header.automaticallyChangeAlpha = YES;
         header.lastUpdatedTimeLabel.hidden = YES;// 隐藏时间
 
-        
+        [header setTitle:@"刷新中..." forState:MMRefreshStateNormal];
         [header setTitle:@"下拉刷新" forState:MMRefreshStateLoading];
         [header setTitle:@"松开刷新" forState:MMRefreshStatePressing];
+        [header setTitle:@"结束" forState:MMRefreshStateWillEndLoad];
+        
         header.stateLabel.font = [UIFont systemFontOfSize:12];
         header.stateLabel.textColor = [UIColor redColor];
         

@@ -34,18 +34,8 @@
 //
 //    } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
     
-//    MMRefreshStyle *style = [MMRefreshStyle new];
-//    DNRefreshGifHeader *gitHeader = [[DNRefreshGifHeader alloc] initWithMMRefreshStyle:style];
-//    [self.tabelView tg_headerRefreshExecutingBlock:^{
-//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//            [NSThread sleepForTimeInterval:1];
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.tabelView tg_headerEndRefresh];
-//            });
-//        });
-//    } gifHeader:gitHeader isChangeAlpha:NO];
-    
-    
+    MMRefreshStyle *style = [MMRefreshStyle new];
+    DNRefreshGifHeader *gitHeader = [[DNRefreshGifHeader alloc] initWithMMRefreshStyle:style];
     [self.tabelView tg_headerRefreshExecutingBlock:^{
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             [NSThread sleepForTimeInterval:1];
@@ -53,7 +43,17 @@
                 [self.tabelView tg_headerEndRefresh];
             });
         });
-    }];
+    } gifHeader:gitHeader isChangeAlpha:NO];
+    
+    
+//    [self.tabelView tg_headerRefreshExecutingBlock:^{
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            [NSThread sleepForTimeInterval:1];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.tabelView tg_headerEndRefresh];
+//            });
+//        });
+//    }];
 
     [self.tabelView tg_footerRefreshExecutingBlock:^{
         [NSThread sleepForTimeInterval:1];
