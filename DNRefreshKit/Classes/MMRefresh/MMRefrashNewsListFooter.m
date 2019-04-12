@@ -60,6 +60,7 @@
 #pragma mark 监听scrollView的contentOffset改变
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
 {
+//    NSLog(@"监听scrollView的contentOffset改变");
     [super scrollViewContentOffsetDidChange:change];
     
 }
@@ -67,6 +68,7 @@
 #pragma mark 监听scrollView的contentSize改变
 - (void)scrollViewContentSizeDidChange:(NSDictionary *)change
 {
+//     NSLog(@"监听scrollView的contentSize改变");
     [super scrollViewContentSizeDidChange:change];
     
 }
@@ -74,6 +76,7 @@
 #pragma mark 监听scrollView的拖拽状态改变
 - (void)scrollViewPanStateDidChange:(NSDictionary *)change
 {
+//     NSLog(@"监听scrollView的拖拽状态改变");
     [super scrollViewPanStateDidChange:change];
     
 }
@@ -103,7 +106,7 @@
             [self.loading stopAnimating];
         case MMRefreshStateNoText:
             self.label.text = @"";
-                        [self.loading stopAnimating];
+            [self.loading stopAnimating];
             
             break;
         default:

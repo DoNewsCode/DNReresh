@@ -51,6 +51,7 @@
 		B189FB6B214A63A600A9D88B /* dropdown_ball_00020@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B189FB53214A63A500A9D88B /* dropdown_ball_00020@2x.png */; };
 		B189FB6C214A63A600A9D88B /* dropdown_ball_00016@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B189FB54214A63A500A9D88B /* dropdown_ball_00016@2x.png */; };
 		B189FB74214A762E00A9D88B /* MMRfreshGif.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B189FB73214A762E00A9D88B /* MMRfreshGif.bundle */; };
+		B1AEF8422179DCAF0086F89A /* A9VG.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B1AEF8412179DCAF0086F89A /* A9VG.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		B189FB53214A63A500A9D88B /* dropdown_ball_00020@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropdown_ball_00020@2x.png"; sourceTree = "<group>"; };
 		B189FB54214A63A500A9D88B /* dropdown_ball_00016@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropdown_ball_00016@2x.png"; sourceTree = "<group>"; };
 		B189FB73214A762E00A9D88B /* MMRfreshGif.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MMRfreshGif.bundle; sourceTree = "<group>"; };
+		B1AEF8412179DCAF0086F89A /* A9VG.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = A9VG.bundle; sourceTree = "<group>"; };
 		C3983FD8DCF98581628CDD31 /* Pods-DNRefreshKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNRefreshKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E31E4E2F60FA191913BD49F9 /* Pods-DNRefreshKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNRefreshKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 		6003F593195388D20070C39A /* Example for DNRefreshKit */ = {
 			isa = PBXGroup;
 			children = (
+				B1AEF8412179DCAF0086F89A /* A9VG.bundle */,
 				B189FB262148A68B00A9D88B /* MMRefresh.bundle */,
 				6003F59C195388D20070C39A /* DNAppDelegate.h */,
 				6003F59D195388D20070C39A /* DNAppDelegate.m */,
@@ -299,7 +302,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				6113CB9E5D35A68E00B28988 /* [CP] Embed Pods Frameworks */,
-				B7BB0A92D41DE2FBEAA4204D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,7 +321,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				511E84CF19EA46BE7CE5F471 /* [CP] Embed Pods Frameworks */,
-				A70E1C88D447E1EF83BD8369 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +342,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "540563689@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 7BTPHRV9UY;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -383,6 +387,7 @@
 				B189FB63214A63A600A9D88B /* dropdown_ball_00012@2x.png in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				B189FB5E214A63A600A9D88B /* dropdown_ball_00017@2x.png in Resources */,
+				B1AEF8422179DCAF0086F89A /* A9VG.bundle in Resources */,
 				B189FB64214A63A600A9D88B /* dropdown_ball_00010@2x.png in Resources */,
 				B189FB62214A63A600A9D88B /* dropdown_ball_0005@2x.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -468,36 +473,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A70E1C88D447E1EF83BD8369 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNRefreshKit_Tests/Pods-DNRefreshKit_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7BB0A92D41DE2FBEAA4204D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNRefreshKit_Example/Pods-DNRefreshKit_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB74C3EC41274315D59D7449 /* [CP] Check Pods Manifest.lock */ = {
@@ -656,6 +631,7 @@
 			baseConfigurationReference = E31E4E2F60FA191913BD49F9 /* Pods-DNRefreshKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7BTPHRV9UY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNRefreshKit/DNRefreshKit-Prefix.pch";
 				INFOPLIST_FILE = "DNRefreshKit/DNRefreshKit-Info.plist";
@@ -671,6 +647,7 @@
 			baseConfigurationReference = C3983FD8DCF98581628CDD31 /* Pods-DNRefreshKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7BTPHRV9UY;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNRefreshKit/DNRefreshKit-Prefix.pch";
 				INFOPLIST_FILE = "DNRefreshKit/DNRefreshKit-Info.plist";

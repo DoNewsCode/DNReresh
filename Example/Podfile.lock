@@ -1,5 +1,5 @@
 PODS:
-  - DNRefreshKit (6):
+  - DNRefreshKit (7.1):
     - FLAnimatedImage
   - FLAnimatedImage (1.0.12)
 
@@ -7,14 +7,18 @@ DEPENDENCIES:
   - DNRefreshKit (from `../`)
   - FLAnimatedImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FLAnimatedImage
+
 EXTERNAL SOURCES:
   DNRefreshKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  DNRefreshKit: 81f064c9288cdba0adce02ce0f018a210d4a3471
+  DNRefreshKit: 60b796faa71be96bf1e9cbea6074c94c29e717f1
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
 
 PODFILE CHECKSUM: a9ff275ce6ff0926ceb1f41a40f680e723f5fe1b
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

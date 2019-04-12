@@ -41,6 +41,7 @@
         // 这里的_scrollView.mm_contentH替换掉self.mj_y更为合理
         CGFloat one = _scrollView.mm_offsetY ;
         CGFloat two = _scrollView.mm_contentHeight - _scrollView.height + self.height * self.triggerAutomaticallyLoadPercent + _scrollView.mm_insetBottom - self.height;
+
         if (one >= two ) {
             // 防止手松开时连续调用
             CGPoint old = [change[@"old"] CGPointValue];

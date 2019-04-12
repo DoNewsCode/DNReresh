@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     [self.view addSubview:self.tabelView];
-    
+//    
 //    [self.tabelView tg_headerRefreshExecutingBlock:^{
 //
 //        dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -34,8 +34,18 @@
 //
 //    } gifType:MMRereshGifTypeFrameAnimation isChangeAlpha:NO];
     
-    MMRefreshStyle *style = [MMRefreshStyle new];
-    DNRefreshGifHeader *gitHeader = [[DNRefreshGifHeader alloc] initWithMMRefreshStyle:style];
+//    MMRefreshStyle *style = [MMRefreshStyle new];
+//    DNRefreshGifHeader *gitHeader = [[DNRefreshGifHeader alloc] initWithMMRefreshStyle:style];
+//    [self.tabelView tg_headerRefreshExecutingBlock:^{
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            [NSThread sleepForTimeInterval:1];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.tabelView tg_headerEndRefresh];
+//            });
+//        });
+//    } gifHeader:gitHeader isChangeAlpha:NO];
+    
+    
     [self.tabelView tg_headerRefreshExecutingBlock:^{
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             [NSThread sleepForTimeInterval:1];
@@ -43,8 +53,16 @@
                 [self.tabelView tg_headerEndRefresh];
             });
         });
-    } gifHeader:gitHeader isChangeAlpha:NO];
+    }];
 
+    [self.tabelView tg_footerRefreshExecutingBlock:^{
+        [NSThread sleepForTimeInterval:1];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tabelView tg_footerEndRefresh];
+        });
+    }];
+    
+    [self.tabelView tg_isHiddenFooter:NO];
     
 //    //下拉刷新
 //    DNRefreshGifHeader *header = [DNRefreshGifHeader refreshHeaderWithStyle:nil loadingBlock:^{
@@ -63,7 +81,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 20;
 }
     
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,7 +93,7 @@
 #pragma mark - Getters & Setters
 - (UITableView *)tabelView {
     if(_tabelView == nil) {
-        CGRect frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height);
+        CGRect frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100);
         _tabelView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
         _tabelView.dataSource = self;
         _tabelView.delegate = self;
